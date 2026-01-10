@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>タイトル</title>
+<link href="../css/reset.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+<!--ビューポート-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--jQuery本体-->
+<script src="../js/jquery-1.11.2.min.js"></script>
+
+<!--ready関数-->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const targets = document.querySelectorAll(".fade-in");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-show");
+          observer.unobserve(entry.target); // 一度だけでOKなら
+        }
+      });
+    },
+    {
+      threshold: 0.2
+    }
+  );
+
+  targets.forEach(target => observer.observe(target));
+});
+</script>
+
+</head>
+
+<body>
+<!-- ヘッダー -->
+    <div class="sb-head">
+        <div class="sb-head-text">
+            <h4><a href="../index.html">Design Works</a></h4>
+            <nav class="sb-nav">
+                <ul>
+                    <li><a href="../service/index.html">SERVICE</a></li>
+                    <li><a href="../works/index.html">WORKS</a></li>
+                    <li><a href="../about/index.html">ABOUT</a></li>
+                    <li class="sb-h-ctabtn"><a href="../contact/index.html">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="sb-hero">
+        <h1 class="fade-in">ABOUT</h1>
+        <p class="fade-in">わかりやすさと誠実さを大切に、Webサイト制作に取り組んでいます。</p>
+    </div>
+
+    <section>
+        <div class="wrapper">
+            <div class="title fade-in">
+                <h2>代表メッセージ</h2>
+            </div>
+            <div class="about-msg">
+                <div class="about-img fade-in">
+                    <img src="../img/ceo224324.png" alt="" width="224" height="324">
+                </div>
+                <div class="about-txt fade-in">
+                    <h3>代表 ○○○○</h3>
+                    <p>WEBサイトは、企業やサービスの第一印象を決める大切な<br>
+                        コミュニケーションツールだと考えています。</p>
+                    <p>私たちは見た目のデザインだけでなく、訪れた人が迷わず<br>
+                        目的にたどり着ける、わかりやすさや使いやすさを重視して<br>
+                        Webサイト制作を行なっています。</p>
+                    <p>クライアントの課題や想いを丁寧に汲み取り、長く安心して<br>
+                        使っていただけるサイトを一つひとつ誠実に制作していきます。</p>
+                </div>
+            </div>
+            <div class="title">
+                <h2>会社概要</h2>
+            </div>
+            <div class="about-grid">
+                <dl>
+                    <dt>会社名</dt>
+                    <dd>合同会社デザインワークス</dd>
+
+                    <dt>代表者</dt>
+                    <dd>○○○○</dd>
+
+                    <dt>所在地</dt>
+                    <dd>東京都</dd>
+
+                    <dt>事業内容</dt>
+                    <dd>Webサイト制作・運営・保守</dd>
+
+                    <dt>設立</dt>
+                    <dd>20XX</dd>
+
+                    <dt>連絡先</dt>
+                    <dd>email@email.com</dd>
+                </dl>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+     <footer>
+        <div class="ft-wrp">
+            <div class="ft-title">
+                <h3>Design Works</h3>
+            </div>
+            <div class="ft-link">
+                <a href="../service/index.html"><p>SERVICE</p></a>
+                <a href="../works/index.html"><p>WORKS</p></a>
+                <a href="../about/index.html"><p>ABOUT</p></a>
+                <a href="../contact/index.html"><p>CONTACT</p></a>
+            </div>
+            <div class="copy">
+                <h5>&copy; 2026 Design Works</h5>
+            </div>
+        </div>
+     </footer>
+</body>
+
+</html>

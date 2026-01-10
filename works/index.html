@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>タイトル</title>
+<link href="../css/reset.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+<!--ビューポート-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--jQuery本体-->
+<script src="../js/jquery-1.11.2.min.js"></script>
+
+<!--ready関数-->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const targets = document.querySelectorAll(".fade-in");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-show");
+          observer.unobserve(entry.target); // 一度だけでOKなら
+        }
+      });
+    },
+    {
+      threshold: 0.2
+    }
+  );
+
+  targets.forEach(target => observer.observe(target));
+});
+</script>
+
+
+
+</head>
+
+<body>
+    <div class="sb-head">
+        <div class="sb-head-text">
+            <h4><a href="../index.html">Design Works</a></h4>
+            <nav class="sb-nav">
+                <ul>
+                    <li><a href="../service/index.html">SERVICE</a></li>
+                    <li><a href="../works/index.html">WORKS</a></li>
+                    <li><a href="../about/index.html">ABOUT</a></li>
+                    <li class="sb-h-ctabtn"><a href="../contact/index.html">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="sb-hero">
+        <h1 class="fade-in">WORKS</h1>
+        <p class="fade-in">だるまさんがころんだだるまさんがころんだ</p>
+    </div>
+
+    <section>
+      <div class="wrapper">
+        <div class="title fade-in">
+                <h1>制作実績</h1>
+            </div>
+            <div class="wrapper">
+                <div class="work-card">
+                    <!-- モーダルを開くボタン -->
+                    <button class="modal-open js-modal-open"><img class="fade-in" src="../img/works1-300300.png" alt="" width="300" height="300"></button>
+                    <img class="fade-in" src="../img/works2-300300.png" alt="パソコンのコーディング画面" width="300" height="300">
+                    <img class="fade-in" src="../img/works3-300300.png" alt="壁に落書きをする少年" width="300" height="300">
+                </div>
+            </div>
+
+
+        
+        <!-- モーダル本体 -->
+        <div class="modal js-modal">
+          <div class="modal-container">
+            <!-- モーダルを閉じるボタン -->
+            <div class="modal-close js-modal-close">×</div>
+            <!-- モーダル内部のコンテンツ -->
+            <div class="modal-content">
+              <img src="../img/works1-300300.png" alt="" width="300" height="300">
+              <p>クライアント：株式会社〇〇<br>
+                  業種：ITサービス<br>
+                  制作物：コーポレートサイト<br>
+                  制作期間：1ヶ月<br>
+                  担当範囲：情報設計/デザイン/コーディング
+              </p>
+              <p>課題：<br>
+                  既存のサイトは情報が整理されておらず、<br>
+                  どのようなサービスを提供している会社<br>
+                  なのかがわかりにくい状態でした。<br>
+                  また、スマートフォンでの閲覧時に文字が<br>
+                  小さく、操作しづらい点も課題でした。
+              </p>
+              <p>目的：<br>
+                  事業内容をわかりやすく伝える。<br>
+                  問い合わせまでの動線を明確にする。<br>
+                  スマートフォンでも見やす構成にする。
+              </p>
+              <p>提案：<br>
+                  トップページではファーストビューで<br>
+                  事業内容が伝わるように、シンプルな<br>
+                  キャッチコピーを配置しました。<br>
+                  また、ナビゲーションを最小限に抑え、<br>
+                  他のページへ迷わず遷移できる構成と<br>
+                  しています。
+              </p>
+              <p>
+                ポイント：<br>
+                  派手な装飾を避け、コーポレートサイト<br>
+                  としての安心感を重視しました。<br>
+
+                  クライアントの業種や規模を想定し、<br>
+                  「わかりやすさ」と「使いやすさ」を<br>
+                  最優先に設計しました。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="top-cta">
+                <div>
+                    <h3>お見積もり・お問い合わせはお気軽に</h3>
+                </div>
+                <a href="contact/index.html">
+                    <div class="top-cta-btn">
+                    <h4>CONTACT</h4>
+                    </div>
+                </a>
+            </div>
+      </div>
+    </section>
+<!-- フッター -->
+     <footer>
+        <div class="ft-wrp">
+            <div class="ft-title">
+                <h3>Design Works</h3>
+            </div>
+            <div class="ft-link">
+                <a href="../service/index.html"><p>SERVICE</p></a>
+                <a href="../works/index.html"><p>WORKS</p></a>
+                <a href="../about/index.html"><p>ABOUT</p></a>
+                <a href="../contact/index.html"><p>CONTACT</p></a>
+            </div>
+            <div class="copy">
+                <h5>&copy; 2026 Design Works</h5>
+            </div>
+        </div>
+     </footer>
+
+
+
+<script>
+  //要素を取得
+const modal = document.querySelector('.js-modal'),
+      open = document.querySelector('.js-modal-open'),
+      close = document.querySelector('.js-modal-close');
+
+//「開くボタン」をクリックしてモーダルを開く
+function modalOpen() {
+  modal.classList.add('is-active');
+}
+open.addEventListener('click', modalOpen);
+
+//「閉じるボタン」をクリックしてモーダルを閉じる
+function modalClose() {
+  modal.classList.remove('is-active');
+}
+close.addEventListener('click', modalClose);
+
+//「モーダルの外側」をクリックしてモーダルを閉じる
+function modalOut(e) {
+  if (e.target == modal) {
+    modal.classList.remove('is-active');
+  }
+}
+addEventListener('click', modalOut);
+</script>    
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>タイトル</title>
+<link href="css/reset.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+<!--ビューポート-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--jQuery本体-->
+<script src="js/jquery-1.11.2.min.js"></script>
+
+<!--ready関数-->
+<script>
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      header.classList.add("is-fixed");
+    } else {
+      header.classList.remove("is-fixed");
+    }
+  });
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const targets = document.querySelectorAll(".fade-in");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-show");
+          observer.unobserve(entry.target); // 一度だけでOKなら
+        }
+      });
+    },
+    {
+      threshold: 0.2
+    }
+  );
+
+  targets.forEach(target => observer.observe(target));
+});
+</script>
+
+</head>
+
+<body>
+    <!-- ヘッダー -->
+    <div class="head-wrap">
+        <header>
+            <div class="head-text">
+                <h4><a href="">Design Works</a></h4>
+                <nav>
+                    <ul>
+                        <li><a href="service/index.html">SERVICE</a></li>
+                        <li><a href="works/index.html">WORKS</a></li>
+                        <li><a href="about/index.html">ABOUT</a></li>
+                        <li class="h-ctabtn"><a href="contact/index.html">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="hero">
+            <h2 class="fade-in">伝わる設計で、<br>
+                ビジネスをサポートするWeb制作</h2>
+        </div>
+    </div>
+    
+
+    <!-- コンテンツ -->
+    <section> 
+        <div class="wrapper">
+            <div class="title fade-in">
+                <h1>SERVICE</h1>
+            </div>
+            <div class="grid-service">
+                <a href="service/index.html">
+                    <article class="fade-in">
+                        <div class="card-txt">
+                            <h2>Webサイト制作</h2>
+                        </div>
+                        <div class="card-img">
+                            <img src="img/service1-300300.png" alt="キーボードと積み木" width="300" height="300">
+                        </div>
+                    </article>
+                </a>
+                <a href="service/index.html">
+                    <article class="fade-in">
+                        <div class="card-txt">
+                            <h2>レスポンシブ対応</h2>
+                        </div>
+                        <div class="card-img">
+                            <img src="img/service2-300300.png" alt="スマートフォンと右手" width="300" height="300">
+                        </div>
+                    </article>
+                </a>
+                <a href="service/index.html">
+                    <article class="fade-in">
+                        <div class="card-txt">
+                            <h2>運用・保守サポート</h2>
+                        </div>
+                        <div class="card-img">
+                            <img src="img/service3-300300.png" alt="ノートパソコンとコーヒー" width="300" height="300">
+                        </div>
+                    </article>
+                </a>
+            </div>
+
+            <div class="title fade-in">
+                <h1>強み・特長</h1>
+            </div>
+            <div class="grid-str">
+                <div class="str-img fade-in">
+                    <img src="img/top-stg450450.png" alt="ガッツポーズするサラリーマンたち" width="450" height="450">
+                </div>
+                <div class="str-txt fade-in">
+                    <div>
+                        <h3>わかりやすい設計</h3>
+                        <p>情報を整理し、迷わず目的にたどり着ける<br>
+                            サイト設計を行います。</p>
+                    </div>
+                    <div>
+                        <h3>シンプルなデザイン</h3>
+                        <p>余白と文字の読みやすさを重視した、<br>
+                            安心感のあるデザインを心がけています。</p>
+                    </div>
+                    <div>
+                        <h3>更新しやすい構造</h3>
+                        <p>公開後の更新や修正を想定し、<br>
+                            運用しやすい構造で制作します。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="title fade-in">
+                <h1>制作実績</h1>
+            </div>
+            <div class="wrapper">
+                <div class="work-card">
+                    <a class="fade-in" href=""><img src="img/works1-300300.png" alt="白いデスクトップパソコン" width="300" height="300"></a>
+                    <a class="fade-in" href=""><img src="img/works2-300300.png" alt="パソコンのコーディング画面" width="300" height="300"></a>
+                    <a class="fade-in" href=""><img src="img/works3-300300.png" alt="壁に落書きをする少年" width="300" height="300"></a>
+                </div>
+            </div>
+
+            <div class="top-cta">
+                <div>
+                    <h3>お見積もり・お問い合わせはお気軽に</h3>
+                </div>
+                <a href="contact/index.html">
+                    <div class="top-cta-btn">
+                    <h4>CONTACT</h4>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+     <footer>
+        <div class="ft-wrp">
+            <div class="ft-title">
+                <h3>Design Works</h3>
+            </div>
+            <div class="ft-link">
+                <a href="service/index.html"><p>SERVICE</p></a>
+                <a href="works/index.html"><p>WORKS</p></a>
+                <a href="about/index.html"><p>ABOUT</p></a>
+                <a href="contact/index.html"><p>CONTACT</p></a>
+            </div>
+            <div class="copy">
+                <h5>&copy; 2026 Design Works</h5>
+            </div>
+        </div>
+     </footer>
+
+</body>
+
+</html>

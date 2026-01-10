@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>タイトル</title>
+<link href="../css/reset.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+<!--ビューポート-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--jQuery本体-->
+<script src="../js/jquery-1.11.2.min.js"></script>
+
+<!--ready関数-->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const targets = document.querySelectorAll(".fade-in");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-show");
+          observer.unobserve(entry.target); // 一度だけでOKなら
+        }
+      });
+    },
+    {
+      threshold: 0.2
+    }
+  );
+
+  targets.forEach(target => observer.observe(target));
+});
+</script>
+
+</head>
+
+<body>
+ <div class="sb-head">
+        <div class="sb-head-text">
+            <h4><a href="../index.html">Design Works</a></h4>
+            <nav class="sb-nav">
+                <ul>
+                    <li><a href="../service/index.html">SERVICE</a></li>
+                    <li><a href="../works/index.html">WORKS</a></li>
+                    <li><a href="../about/index.html">ABOUT</a></li>
+                    <li class="sb-h-ctabtn"><a href="../contact/index.html">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="sb-hero">
+        <h1 class="fade-in">SERVICE</h1>
+        <p class="fade-in">wedサイトの制作・運営・保守までを一貫して対応しています</p>
+    </div>
+
+    <section>
+      <div class="wrapper">
+        <div class="service-grid">
+          <div class="service-web-txt fade-in">
+            <h2>WEBサイト制作</h2>
+            <p>コーポレートサイト、サービスサイト、キャンペーン用 LPなど、<br>
+              目的に応じたWebサイトを制作しています。</p>
+          </div>
+          <img class="fade-in" src="../img/service1-300300.png" alt="" width="300" height="300">
+
+          <div class="service-web-txt fade-in">
+            <h2>レスポンシブ対応</h2>
+            <p>スマートフォンやタブレットなど、様々なデバイスでの<br>
+              閲覧を想定し、レスポンシブデザインで制作しています。</p>
+          </div>
+          <img src="../img/service2-300300.png" alt="" width="300" height="300">
+
+          <div class="service-web-txt fade-in">
+            <h2>運用・保守サポート</h2>
+            <p>サイト公開後の更新や軽微な修正、<br>
+              運用に関するご相談にも対応しています。</p>   
+          </div>
+          <img src="../img/service3-300300.png" alt="" width="300" height="300"> 
+        </div>
+
+        <div class="title">
+          <h2>制作工程</h2>
+        </div>  
+        <div class="accordions">
+          <div class="accordion">
+            <div class="accordion__menu">
+              <button class="accordion__button">ヒアリング</button>
+              <div class="accordion__body">
+                <p class="accordion__text">
+                  ご要望や課題をお伺いし、サイトの目的や方向性を整理します。
+                </p>
+              </div>
+            </div>
+            <div class="arrow"></div>
+            <div class="accordion__menu">
+              <button class="accordion__button">設計</button>
+              <div class="accordion__body">
+                <p class="accordion__text">
+                  ページの構成や情報の優先順位を整理し、わかりやすい動線を設計します。
+                </p>
+              </div>
+            </div>
+            <div class="arrow"></div>
+            <div class="accordion__menu">
+              <button class="accordion__button">デザイン</button>
+              <div class="accordion__body">
+                <p class="accordion__text">
+                  企業にイメージや目的に合わせたシンプルで見やすいデザインを制作します。
+                </p>
+              </div>
+            </div>
+            <div class="arrow"></div>
+            <div class="accordion__menu">
+              <button class="accordion__button">実装</button>
+              <div class="accordion__body">
+                <p class="accordion__text">
+                  HTML/CSS/JavaScriptを用いてデザインを正確に再現します。<br>
+                  レスポンシブ対応にも配慮します。
+                </p>
+              </div>
+            </div>
+            <div class="arrow"></div>
+            <div class="accordion__menu">
+              <button class="accordion__button">公開</button>
+              <div class="accordion__body">
+                <p class="accordion__text">
+                  最終確認後、サイトを公開します。公開後の運用にもご相談いただけます。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+<!-- フッター -->
+     <footer>
+        <div class="ft-wrp">
+            <div class="ft-title">
+                <h3>Design Works</h3>
+            </div>
+            <div class="ft-link">
+                <a href="../service/index.html"><p>SERVICE</p></a>
+                <a href="../works/index.html"><p>WORKS</p></a>
+                <a href="../about/index.html"><p>ABOUT</p></a>
+                <a href="../contact/index.html"><p>CONTACT</p></a>
+            </div>
+            <div class="copy">
+                <h5>&copy; 2026 Design Works</h5>
+            </div>
+        </div>
+     </footer>
+
+
+    <script>
+      const buttons = document.querySelectorAll('.accordion__button');
+
+buttons.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    const body = e.currentTarget.nextElementSibling;
+    const text = body.children[0];
+    const textHeight = text.offsetHeight;
+
+    const menu = e.currentTarget.parentNode;
+    menu.classList.toggle('open');
+
+    if(menu.classList.contains('open')) {
+      body.style.height = textHeight + 'px';
+    } else {
+      body.style.height = 0;
+    }
+  });
+});
+
+    </script>
+</body>
+
+</html>
