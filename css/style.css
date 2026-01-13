@@ -355,6 +355,7 @@ article {
 
 .work-card {
   display: grid;
+  text-align: center;
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(1rem, 3vw, 2rem);
   margin-bottom: 10rem;
