@@ -306,8 +306,11 @@ article {
   width: 100%;
   height: auto;
   object-fit: cover;
+  transition: transform 0.6s ease;
 }
-
+.card-img img:hover{
+  transform: scale(1.1);
+}
 
 .grid-str{
   display: flex;
@@ -359,10 +362,15 @@ article {
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(1rem, 3vw, 2rem);
   margin-bottom: 10rem;
+  overflow: hidden;
 }
 .work-card img {
   width: 70%;
   height: auto;
+  transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.work-card img:hover {
+  transform: scale(1.1);
 }
 @media (max-width: 768px) {
     .work-card {
