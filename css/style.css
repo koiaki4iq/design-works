@@ -365,7 +365,9 @@ article {
   overflow: hidden;
 }
 .work-card img {
-  width: 70%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
   height: auto;
   transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
@@ -503,6 +505,7 @@ dl dt, dl dd {
 .work-card button {
     width: 100%;
     height: auto;
+    background-color: white;
 }
 
 
@@ -645,6 +648,7 @@ dl dt, dl dd {
   margin-left: auto;
   padding: 0px 20px 100px;
 }
+
 .accordion {
   width: 100%;
   display: flex;
@@ -664,6 +668,9 @@ dl dt, dl dd {
   cursor: pointer;
   font-size: 2.4rem;
   font-weight: bold;
+}
+.accordion__button:hover {
+  background-color: #6d51f9;
 }
 .accordion__body {
   height: 0;
